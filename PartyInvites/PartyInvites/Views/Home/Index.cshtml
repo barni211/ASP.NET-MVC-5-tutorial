@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <title>Przyjęcie sylwestrowe</title>
+    <style>
+        .btn a { color: white; text-decoration: none}
+        body { background-color: #F1F1F1}
+    </style>
+</head>
+<body>
+    <div class="text-center"> 
+        @ViewBag.Greeting, świecie!
+        <p>Zapraszamy na wspaniałe przyjęcie! <br />
+        (Do zrobienia: trzeba to ulepszyć, dodać zdjęcia i inne takie).
+        </p>
+        <div class="btn btn-success">
+            @Html.ActionLink("Wyślij RSVP", "RsvpForm")
+        </div>
+    </div>
+</body>
+</html>

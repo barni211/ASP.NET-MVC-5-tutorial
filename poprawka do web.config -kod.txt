@@ -1,0 +1,9 @@
+<healthMonitoring>
+
+<providers>
+
+<remove name="OracleWebEventProvider"/>
+
+</providers>
+
+</healthMonitoring>

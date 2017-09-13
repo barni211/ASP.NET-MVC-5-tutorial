@@ -1,0 +1,52 @@
+﻿@model PartyInvites.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <title>RsvpForm</title>
+</head>
+<body>
+    <div class="panel panel-success">
+        <div class="panel-heading text-center"><h4>RSVP</h4></div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary()
+                <div class="form-group">
+                    <label>Imie i nazwisko: </label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                </div>
+                <div class="form=group">
+                    <label>Twój e-mail: </label>
+                    @Html.TextBoxFor(x => x.email, new { @class = "form-control"})
+                </div>
+                <div class="form-group">
+                    <label>Twój telefon: </label>
+                    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control"})
+                </div>
+                <div class="form-group">
+                    <label>Czy przyjdziesz na przyjęcie?</label>
+
+                    @Html.DropDownListFor(x => x.WillAttend, new[]
+                        {
+                            new SelectListItem() {Text = "Tak, przyjdę.", Value = bool.TrueString },
+                            new SelectListItem() {Text = "Nie, nie przyjdę", Value = bool.FalseString }
+                        }, "Wybierz opcję", new { @class = "form-control" })
+                </div>
+                <div class="text-center">        
+                    <input type="submit" value="Wyślij RSVP" />
+                </div>            
+            }
+        </div>
+    </div>
+</body>
+</html>
